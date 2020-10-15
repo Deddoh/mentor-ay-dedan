@@ -1,0 +1,63 @@
+<section id="charts" class="space">
+    <div fxLayout="row" fxLayoutAlign="space-around" fxLayoutGap="20px">
+        
+        <mat-card fxFlex="50" style="background-color: blueviolet; color: white;" fxLayout="row" fxLayoutAlign="space-around center">
+            <!-- <div fxLayout="row" fxLayoutAlign="space-around center"> -->
+                <h1>New Application</h1>
+                <button class="btn btn-outline-light " id="apply_button" [routerLink]="['apply']">Apply</button>
+            <!-- </div> -->
+        </mat-card>
+    
+        <mat-card fxFlex="50" style="background: rgb(39, 141, 209); color: white;">
+            <div fxLayout="column" fxLayoutAlign="center center">
+            <h1>Application Status: </h1>
+            <mat-card style="background: darkseagreen; height: fit-content; border-radius: 50%; color: white;"><h4>PENDING</h4></mat-card>
+            </div>
+        </mat-card>
+    </div>
+
+</section>
+
+<br>
+<mat-divider ></mat-divider>
+<br>
+
+<!-- application form -->
+<section class="space">
+    <router-outlet></router-outlet>
+</section>
+
+<section class="space application_form">
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+        <mat-card fxFlex="60" class="graph">
+            <ngx-charts-bar-vertical 
+[view]="view"
+[scheme]="colorScheme"
+[results]="single"
+[gradient]="gradient"
+[xAxis]="showXAxis"
+[yAxis]="showYAxis"
+[legend]="showLegend"
+[showXAxisLabel]="showXAxisLabel"
+[showYAxisLabel]="showYAxisLabel"
+[xAxisLabel]="xAxisLabel"
+[yAxisLabel]="yAxisLabel"
+>
+</ngx-charts-bar-vertical>
+        </mat-card>
+        <mat-card fxFlex="40" class="graph">
+            <mat-card-content>
+            <div fxLayout="column"> 
+                
+                <h1>Details:</h1>
+           
+                
+                <h4>Date of Application: 24/07/2020</h4>
+                <h4>Institution: JKUAT</h4>
+                <h4>Reg Number: C078-98-0198</h4>
+                <h4>ID Number: 34779867</h4>
+            </div>
+        </mat-card-content>
+            </mat-card>
+    </div>
+</section>

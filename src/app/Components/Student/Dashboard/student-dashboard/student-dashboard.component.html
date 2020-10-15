@@ -1,0 +1,80 @@
+<!-- navbar 
+    sidenav
+    main
+    footer
+-->
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+                
+                <button mat-icon-button (click)="toggleSideBar()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                &nbsp;&nbsp;&nbsp;
+                <h1>iBursary</h1>
+            </div>
+            <div fxFlex fxLayout="row" fxLayoutAlign="flex-end center">
+                <ul fxLayout="row" fxLayoutGap="20px">
+               <!-- <li> <button mat-button color="primary">Apply</button> </li> -->
+               <li> <button mat-icon-button><mat-icon aria-hidden="false">home</mat-icon></button></li>
+               <li> <button mat-icon-button><mat-icon>help_outline</mat-icon></button></li>
+               <li>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>person_outline</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="">
+                        <mat-icon>person_outline</mat-icon>
+                        Profile
+                    </button>
+                    <button mat-menu-item [routerLink]="">
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sign out
+                    </button>
+                </mat-menu>
+            </li>
+                </ul>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
+    <!-- sidenav -->
+    <mat-drawer-container>
+        <mat-drawer mode="side" [opened]="sideBarOpen">
+
+            <mat-nav-list>
+                <div style="padding-left: 20px;">
+                <h4>Welcome, John</h4>
+                <h5>email@user.com</h5>
+            </div>
+            
+                <mat-divider></mat-divider>
+
+                <h2 matSubheader>Items</h2>
+                <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['dashboard']"><span class="material-icons">
+                    dashboard
+                    </span>Dashboard</a>
+                <a mat-list-item routerLinkActive="list-item-active" ><mat-icon>person_outline</mat-icon>My account</a>
+                <a mat-list-item routerLinkActive="list-item-actve" ><span class="material-icons">
+                    notifications
+                    </span>Notifications</a>
+                <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['st-applications']"><span class="material-icons">
+                    analytics
+                    </span>Applications</a>
+
+            </mat-nav-list>
+
+        </mat-drawer>
+   
+    <!-- main dashboard content -->
+    <mat-drawer-content fxLayout="column">
+
+
+      <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+
+
+</mat-drawer-container>
+<!-- <footer> footer &copy; 2020</footer> -->

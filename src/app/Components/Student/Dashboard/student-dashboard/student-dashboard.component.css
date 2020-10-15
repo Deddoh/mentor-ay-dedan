@@ -1,0 +1,35 @@
+:host{
+    height: 100%;
+}
+footer{
+    height: 40px;
+    background-color:blue;
+    color: white;
+    bottom: 0px;
+    position: sticky;
+}
+#charts mat-card{
+    height: 140px;
+}
+.space{
+    margin: 0 20px;
+}
+mat-drawer{
+    width: 300px;
+}
+mat-drawer-container{
+    /* height: calc(100vh - 100px) ; */
+    height: 100%;
+}
+mat-drawer-content{
+    margin-top: 30px;
+}
+ul li, li{
+    list-style: none;
+}
+.graph{
+    height: 400px;
+}
+.list-item-active{
+    background: rgb(122, 122, 253);
+}
