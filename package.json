@@ -2,16 +2,23 @@
   "name": "ibursary-frontend",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot"
   },
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.12.0"
+  },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~9.0.2",
+    "@angular/compiler-cli": "~9.0.1",
     "@angular/animations": "^10.1.0",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.0.1",
@@ -30,7 +37,8 @@
     "ng2-file-upload": "^1.4.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "typescript": "~3.7.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1001.0",
